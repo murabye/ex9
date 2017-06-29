@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ex9
+﻿namespace ex9
 {
     class Point
     {
@@ -19,6 +13,20 @@ namespace ex9
         public Point(string info)
         {
             Info = info;
+        }
+
+        public override string ToString()
+        {
+            var res = Info;
+            var cur = this;
+
+            while (cur.Next != null)
+            {
+                res += " " + cur.Next.Info;
+                cur = cur.Next;
+            }
+
+            return res;
         }
     }
 }
